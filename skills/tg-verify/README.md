@@ -310,7 +310,7 @@ The stored token was sealed with the old secret. Paste the token again on the ad
 
 <div align="center">
 
-Part of [**my-claude-skills**](../../README.md) · crafted with ⚡ by [**@N4pst3rX**](https://t.me/N4pst3rX) · maintained by [Arvind0099](https://github.com/Arvind0099)
+Part of [**my-claude-skills**](../../README.md) · crafted with ⚡ by [**@N4pst3rX**](https://t.me/N4pst3rX) · maintained by [Arvind0099](https://github.com/Arvind0099) · [MIT License](../../LICENSE)
 
 <sub>⭐ the repo if it saved you an evening.</sub>
 

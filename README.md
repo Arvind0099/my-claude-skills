@@ -8,6 +8,7 @@ Drop a folder in, and your assistant learns a new trick.
 [![Skills](https://img.shields.io/badge/skills-2-8b5cf6?style=for-the-badge)](#-the-skills)
 [![Code](https://img.shields.io/badge/Python%20%C2%B7%20JavaScript-zero%20dependencies-22d3ee?style=for-the-badge)](#)
 [![Platform](https://img.shields.io/badge/Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-1c2230?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/license-MIT-18a36b?style=for-the-badge)](LICENSE)
 [![Crafted by](https://img.shields.io/badge/crafted%20with%20%E2%9A%A1%20by-%40N4pst3rX-2AABEE?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/N4pst3rX)
 
 [The skills](#-the-skills) · [Install](#-install) · [Add your own](#-adding-a-skill) · [Credits](#-credits)
@@ -132,6 +133,7 @@ verification here") and it kicks in, or call it by name (`/tg-verify`).
 
 ```text
 my-claude-skills/
+├── LICENSE                          ← MIT
 ├── README.md
 └── skills/
     ├── pastebin-arvind/
@@ -146,6 +148,10 @@ my-claude-skills/
         ├── references/              ← contracts and recipes, protocol, checklist
         └── template/                ← server, schema, client, example, tests
 ```
+
+## 📄 License
+
+[MIT](LICENSE) - use it, change it, ship it, commercially too. Keep the copyright notice with the copies.
 
 ## 💜 Credits
 
