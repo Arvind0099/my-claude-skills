@@ -27,7 +27,7 @@ Skills are plain files - no build step, no dependencies beyond what a script say
 
 | Skill | What it does | Needs |
 |---|---|---|
-| [**`pastebin-arvind`**](skills/pastebin-arvind/) | Publishes text, logs, tables and reports to the **N4 Paste** pastebin and hands back a shareable link - with a layout guide that makes plain monospace text look good. | Python 3 (stdlib only) |
+| [**`pastebin-arvind`**](skills/pastebin-arvind/) | Publishes text, logs, tables, reports and whole **HTML/SVG pages** to the **N4 Paste** pastebin and hands back a shareable link - live pages open right in the browser, and a layout guide makes plain monospace text look good. | Python 3 (stdlib only) |
 | [**`tg-verify`**](skills/tg-verify/) | Adds a complete **Telegram-bot verification and login system** to any website: number-matching sign-up, own credentials, passwordless sign-in, password reset, admin page - with schemas, a mock bot and tests. | A JS backend (Workers, Node 20+) and Supabase, D1 or Postgres |
 
 > More are on the way - this table grows with the repo.
@@ -56,13 +56,18 @@ Full guide: [**skills/tg-verify/README.md**](skills/tg-verify/README.md)
 ```text
 python scripts/paste.py sheet.txt --title "Launch board" --expires 7d --verify
 https://pastebin.arvind.eu.org/AbC123xy
+
+python scripts/paste.py page.html --title "Demo" --live
+https://pastebin.arvind.eu.org/live/Xy9ZabCd
 ```
 
 - **One command, one link** - file or stdin in, shareable URL out; `--verify` reads it back to prove it arrived intact.
+- **Live pages** - HTML and SVG open as working pages (`--live`, `/live/<id>` or `/raw?id=<id>&render=true`), each in its
+  own sandbox: scripts, web fonts, images and forms work, but a page can't reach the site or other pastes.
 - **Knows the pastebin** - API fields, languages, expiry choices (`never` `1h` `24h` `7d` `30d`) and the size ceiling
-  (stay under ~60 KB), all found by testing the live service.
-- **Honest about its limits** - the page is a monospace code viewer: no Markdown, no HTML, **no images**. The skill
-  says so, and shows what to do instead (a short link to the picture, chat apps preview it).
+  (10 MiB), all found by testing the live service. Full reference: [API docs](https://pastebin.arvind.eu.org/docs).
+- **Honest about its limits** - the normal page is a monospace code viewer (no Markdown, no images), and live pages keep
+  nothing after a reload. The skill says so, and shows what to do instead.
 - **Layouts that look good** - heavy rules, fixed-width columns with the free text *last* (so Devanagari and emoji
   can't push things out of line), ready-made templates in [`references/formatting.md`](skills/pastebin-arvind/references/formatting.md):
 
@@ -139,7 +144,7 @@ my-claude-skills/
     ├── pastebin-arvind/
     │   ├── SKILL.md                 ← what it is, when to use it, the API, the rules
     │   ├── scripts/
-    │   │   └── paste.py             ← publish text, print the link
+    │   │   └── paste.py             ← publish text or a page, print the link
     │   └── references/
     │       └── formatting.md        ← layouts that look good in a monospace viewer
     └── tg-verify/

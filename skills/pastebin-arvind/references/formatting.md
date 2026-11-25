@@ -1,7 +1,8 @@
 # Layouts for N4 Paste
 
-N4 Paste shows text in a monospace block with line numbers - no Markdown, no HTML, no images. These templates are
-built for that. Rules of thumb: fixed-width columns first, free text last (Devanagari/CJK/emoji aren't fixed width),
+The N4 Paste code view shows text in a monospace block with line numbers - no Markdown, no images, HTML as source.
+These templates are built for that. (For a formatted page, publish HTML instead and share its live link - see *Live
+pages* in `SKILL.md`.) Rules of thumb: fixed-width columns first, free text last (Devanagari/CJK/emoji aren't fixed width),
 no right-hand borders, no tabs, one final newline, about 64-72 columns.
 
 Use `--lang text` for all of them.
@@ -94,4 +95,4 @@ Publish with `--lang bash` (or `text`). Trim to the relevant lines and remove to
 - Markdown tables (`| a | b |`), `**bold**`, `# headings` - they show up as raw symbols.
 - ` ┃ ... ┃ ` right borders - they never line up with non-Latin text.
 - Emoji that render narrow (🖼 ⚠ ✔ without a variation selector) inside aligned label blocks.
-- Anything over ~60 KB - the pastebin fails above roughly 64-128 KB.
+- Anything over 10 MiB - the pastebin answers HTTP 413.
