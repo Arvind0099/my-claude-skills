@@ -5,8 +5,8 @@
 **A growing toolbox of small, sharp skills for Claude Code.**
 Drop a folder in, and your assistant learns a new trick.
 
-[![Skills](https://img.shields.io/badge/skills-1-8b5cf6?style=for-the-badge)](#-the-skills)
-[![Python](https://img.shields.io/badge/scripts-Python%20stdlib%20only-22d3ee?style=for-the-badge&logo=python&logoColor=white)](#)
+[![Skills](https://img.shields.io/badge/skills-2-8b5cf6?style=for-the-badge)](#-the-skills)
+[![Code](https://img.shields.io/badge/Python%20%C2%B7%20JavaScript-zero%20dependencies-22d3ee?style=for-the-badge)](#)
 [![Platform](https://img.shields.io/badge/Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-1c2230?style=for-the-badge)](#)
 [![Crafted by](https://img.shields.io/badge/crafted%20with%20%E2%9A%A1%20by-%40N4pst3rX-2AABEE?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/N4pst3rX)
 
@@ -27,8 +27,28 @@ Skills are plain files - no build step, no dependencies beyond what a script say
 | Skill | What it does | Needs |
 |---|---|---|
 | [**`pastebin-arvind`**](skills/pastebin-arvind/) | Publishes text, logs, tables and reports to the **N4 Paste** pastebin and hands back a shareable link - with a layout guide that makes plain monospace text look good. | Python 3 (stdlib only) |
+| [**`tg-verify`**](skills/tg-verify/) | Adds a complete **Telegram-bot verification and login system** to any website: number-matching sign-up, own credentials, passwordless sign-in, password reset, admin page - with schemas, a mock bot and tests. | A JS backend (Workers, Node 20+) and Supabase, D1 or Postgres |
 
 > More are on the way - this table grows with the repo.
+
+### ✈️ `tg-verify` at a glance
+
+<div align="center">
+<a href="skills/tg-verify/"><img src="skills/tg-verify/assets/hero.svg" alt="The website shows the number 52; tapping 52 in the Telegram bot verifies the person" width="760"></a>
+</div>
+
+```text
+/tg-verify
+/tg-verify mobile number required, must join @mychannel
+```
+
+- **One command, whole system** - sign-up, *Continue with Telegram*, forgot password, account linking and an admin page,
+  wired to the accounts your project already has.
+- **Hard to trick** - two digits on the site, six buttons in the bot; a wrong tap or *Not me* stops the request.
+- **Safe to deploy first** - visitors see no change until the owner pastes a bot token in the admin page.
+- **Try it with no bot at all** - `node skills/tg-verify/template/test/demo.mjs` opens a site with a pretend phone next to it.
+
+Full guide: [**skills/tg-verify/README.md**](skills/tg-verify/README.md)
 
 ### 🔗 `pastebin-arvind` at a glance
 
@@ -80,11 +100,12 @@ git clone https://github.com/Arvind0099/my-claude-skills.git
 cp -r my-claude-skills/skills/* ~/.claude/skills/
 ```
 
-**Just one skill** - copy its folder (for example `skills/pastebin-arvind`) into `~/.claude/skills/`.
+**Just one skill** - copy its folder (for example `skills/tg-verify`) into `~/.claude/skills/`.
 
 **Per project** - copy it into the project's `.claude/skills/` instead, so only that project sees it.
 
-Start a new session and the skill is available; mention what you want ("paste this as a shareable link") and it kicks in.
+Start a new session and the skill is available; mention what you want ("paste this as a shareable link", "add Telegram
+verification here") and it kicks in, or call it by name (`/tg-verify`).
 
 **Stay up to date** - `git pull`, then copy again (or symlink the folders once, and every pull updates them).
 
@@ -113,17 +134,22 @@ Start a new session and the skill is available; mention what you want ("paste th
 my-claude-skills/
 ├── README.md
 └── skills/
-    └── pastebin-arvind/
-        ├── SKILL.md                 ← what it is, when to use it, the API, the rules
-        ├── scripts/
-        │   └── paste.py             ← publish text, print the link
-        └── references/
-            └── formatting.md        ← layouts that look good in a monospace viewer
+    ├── pastebin-arvind/
+    │   ├── SKILL.md                 ← what it is, when to use it, the API, the rules
+    │   ├── scripts/
+    │   │   └── paste.py             ← publish text, print the link
+    │   └── references/
+    │       └── formatting.md        ← layouts that look good in a monospace viewer
+    └── tg-verify/
+        ├── SKILL.md                 ← the steps, defaults and security rules
+        ├── README.md                ← usage guide
+        ├── references/              ← contracts and recipes, protocol, checklist
+        └── template/                ← server, schema, client, example, tests
 ```
 
 ## 💜 Credits
 
-Crafted with ⚡ by **[@N4pst3rX](https://t.me/N4pst3rX)** - the N4 Paste pastebin these skills are built around is crafted by them
+Crafted with ⚡ by **[@N4pst3rX](https://t.me/N4pst3rX)** - the N4 Paste pastebin behind `pastebin-arvind` is crafted by them
 ([Telegram](https://t.me/N4pst3rX) · [X](https://x.com/N4pst3rX)).
 Collected and maintained by [Arvind0099](https://github.com/Arvind0099).
 

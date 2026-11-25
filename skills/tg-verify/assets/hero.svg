@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" role="img" aria-labelledby="t d">
+  <title id="t">tg-verify</title>
+  <desc id="d">A website shows the number 52. The person taps 52 in the Telegram bot and is verified.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1426"/>
+      <stop offset="1" stop-color="#13233f"/>
+    </linearGradient>
+    <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#37aee2"/>
+      <stop offset="1" stop-color="#1e96c8"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#22375c"/>
+    </pattern>
+  </defs>
+  <style>
+    text { font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .h { font-weight: 700; fill: #14213a; }
+    .p { fill: #56647a; }
+    .b { font-weight: 600; fill: #17324f; text-anchor: middle; }
+    .hit { animation: hit 3.2s ease-in-out infinite; transform-origin: 1010px 307px; }
+    .ring { animation: ring 3.2s ease-out infinite; transform-origin: 1010px 307px; }
+    .ok { animation: ok 3.2s ease-in-out infinite; }
+    @keyframes hit { 0%, 34%, 100% { transform: scale(1); } 42% { transform: scale(.92); } 50% { transform: scale(1.04); } 58% { transform: scale(1); } }
+    @keyframes ring { 0%, 42% { opacity: 0; transform: scale(.9); } 48% { opacity: .9; } 75%, 100% { opacity: 0; transform: scale(1.5); } }
+    @keyframes ok { 0%, 52% { opacity: .25; } 62%, 94% { opacity: 1; } 100% { opacity: .25; } }
+    @media (prefers-reduced-motion: reduce) { .hit, .ring, .ok { animation: none; } .ring { opacity: 0; } }
+  </style>
+
+  <rect width="1200" height="540" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="540" rx="28" fill="url(#dots)"/>
+
+  <!-- website -->
+  <rect x="70" y="62" width="520" height="416" rx="20" fill="#fff"/>
+  <path d="M70 82a20 20 0 0 1 20-20h480a20 20 0 0 1 20 20v28H70z" fill="#e9eef6"/>
+  <circle cx="98" cy="86" r="6" fill="#ff6b6b"/><circle cx="118" cy="86" r="6" fill="#ffc94d"/><circle cx="138" cy="86" r="6" fill="#3ecf8e"/>
+  <rect x="164" y="74" width="398" height="24" rx="12" fill="#fff"/>
+  <text x="182" y="91" font-size="14" class="p">your-site.com</text>
+  <text x="110" y="166" font-size="32" class="h">Create your account</text>
+  <text x="110" y="198" font-size="18" class="p">Open the bot, press Start, tap this number:</text>
+  <rect x="110" y="220" width="440" height="130" rx="16" fill="#eff4fb"/>
+  <rect x="240" y="240" width="80" height="90" rx="14" fill="#fff" stroke="#1e96c8" stroke-width="3"/>
+  <rect x="340" y="240" width="80" height="90" rx="14" fill="#fff" stroke="#1e96c8" stroke-width="3"/>
+  <text x="280" y="304" font-size="54" class="h" text-anchor="middle">5</text>
+  <text x="380" y="304" font-size="54" class="h" text-anchor="middle">2</text>
+  <rect x="110" y="372" width="440" height="58" rx="14" fill="url(#tg)"/>
+  <text x="330" y="408" font-size="21" font-weight="600" fill="#fff" text-anchor="middle">Open Telegram</text>
+
+  <!-- connection -->
+  <path id="wire" d="M604 285C670 285 690 250 756 250" fill="none" stroke="#4b6a9b" stroke-width="3" stroke-dasharray="3 11" stroke-linecap="round"/>
+  <circle r="8" fill="#37aee2"><animateMotion dur="3.2s" repeatCount="indefinite" keyTimes="0;0.3;1" keyPoints="0;1;1" calcMode="linear" path="M604 285C670 285 690 250 756 250"/></circle>
+
+  <!-- phone -->
+  <rect x="770" y="34" width="360" height="472" rx="38" fill="#060c18"/>
+  <rect x="782" y="46" width="336" height="448" rx="28" fill="#dfeaf5"/>
+  <path d="M782 74a28 28 0 0 1 28-28h280a28 28 0 0 1 28 28v34H782z" fill="url(#tg)"/>
+  <circle cx="820" cy="77" r="18" fill="#fff"/>
+  <path d="M811 77.500l19-8-3 16-6-4.500-3.500 3.500-.5-6 8-7-10 6z" fill="#1e96c8"/>
+  <text x="850" y="75" font-size="17" font-weight="700" fill="#fff">Your verify bot</text>
+  <text x="850" y="94" font-size="13" fill="#e2f4fd">bot</text>
+
+  <rect x="800" y="124" width="300" height="114" rx="16" fill="#fff"/>
+  <text x="818" y="153" font-size="17" class="h">Hello Aman.</text>
+  <text x="818" y="178" font-size="15.500" class="p">To create your account, tap the</text>
+  <text x="818" y="199" font-size="15.500" class="p">number you see on the website.</text>
+  <text x="818" y="224" font-size="13" font-style="italic" class="p">Asked from Chrome on Windows</text>
+
+  <g fill="#fff">
+    <rect x="800" y="250" width="92" height="38" rx="10"/><rect x="904" y="250" width="92" height="38" rx="10"/><rect x="1008" y="250" width="92" height="38" rx="10"/>
+    <rect x="800" y="298" width="92" height="38" rx="10"/><rect x="904" y="298" width="92" height="38" rx="10"/>
+    <rect x="800" y="346" width="300" height="38" rx="10"/>
+  </g>
+  <g class="b" font-size="18">
+    <text x="846" y="275">96</text><text x="950" y="275">28</text><text x="1054" y="275">44</text>
+    <text x="846" y="323">61</text><text x="950" y="323">17</text>
+    <text x="950" y="371" font-size="16">Not me</text>
+  </g>
+  <g transform="translate(44 10)">
+    <rect class="ring" x="964" y="288" width="92" height="38" rx="10" fill="none" stroke="#1e96c8" stroke-width="3"/>
+    <g class="hit">
+      <rect x="964" y="288" width="92" height="38" rx="10" fill="url(#tg)"/>
+      <text x="1010" y="313" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">52</text>
+    </g>
+  </g>
+
+  <g class="ok">
+    <rect x="800" y="400" width="300" height="66" rx="16" fill="#fff"/>
+    <circle cx="830" cy="433" r="15" fill="#18a36b"/>
+    <path d="M823 433l5 5.500 9-10.500" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="856" y="429" font-size="17" class="h">Verified</text>
+    <text x="856" y="449" font-size="14" class="p">Choose your login and password.</text>
+  </g>
+</svg>
